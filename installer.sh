@@ -14,7 +14,7 @@ echo SO `cat /etc/release` Compativel.
 fi
 
 echo " "
-echo Instalando o Samba4 - 4nsecurity.
+echo Instalando o Samba4 - FirewallExperts.
 
 #backup old Samba4
    
@@ -199,6 +199,31 @@ echo Instalando o Samba4 - 4nsecurity.
   fi
 
 
+#remove e cria dir temporario do pacote
+rm -rf "/var/local/tmp/samba4" 2>/dev/null
+
+if [ -e "/var/local/tmp/samba4" ]; then
+    echo nothing >/dev/null
+else
+mkdir -p /var/local/tmp/samba4 2>/dev/null
+fi
+
+#copia source 
+cp samba4-source.tar.gz.firewallexperts /var/local/tmp/samba4/ > /dev/null 2>&1
+ 
+#entra no dir do pacote
+cd /var/local/tmp/samba4 > /dev/null 2>&1
+                    
+if [ `pwd` = "/var/local/tmp/samba4" ]; then
+   echo dir ok. >/dev/null
+else
+echo erro no processo de instalação.
+exit 1
+fi
+
+# decrypta e extrai os arquivos
+openssl enc -d -aes-256-cbc -in samba4-source.tar.gz.firewallexperts -pass pass:"m-N]&X<B8ybbJSw)" | tar -xzf -
+
 #copiando arquivos.
 
 cp -r etc/* /etc/
@@ -283,15 +308,30 @@ fi
 #load libs
 /sbin/ldconfig
 
+#remove e cria dir temporario do pacote
+rm -rf "/var/local/tmp/samba4" 2>/dev/null
+
 echo " " 
 echo Samba4 - 4nsecurity instalado com sucesso
+
+
 
     ;;
 	
 	uninstall)
 	    echo " "
-		echo Removendo o Samba4 - 4nsecurity.
+
+                SMBVERSION=`smbd -V | awk '{ print $2 }'`
+                if [ "$SMBVERSION" = "3.6.25" ]; then
+                   echo Samba 4 nao instalado.
+		   exit
+                else
+		   echo nothing to say > /dev/null
+		fi
+
+		echo Removendo o Samba4 - Firewallexperts.
 		echo " "
+
 		#removendo lib
 		rm /lib/libavahi-client.so.3 2>/dev/null
 		rm /lib/libavahi-common.so.3 2>/dev/null
@@ -364,7 +404,7 @@ echo Samba4 - 4nsecurity instalado com sucesso
 		unlink /usr/sbin/samba_upgradedns 2>/dev/null
 		
 		#restaurando arquivos originais
-        cp /usr/bin/eventlogadm.original /usr/bin/eventlogadm 2>/dev/null
+        	cp /usr/bin/eventlogadm.original /usr/bin/eventlogadm 2>/dev/null
 		cp /usr/bin/findsmb.original /usr/bin/findsmb 2>/dev/null
 		cp /usr/bin/net.original /usr/bin/net 2>/dev/null
 		cp /usr/bin/nmblookup.original /usr/bin/nmblookup 2>/dev/null

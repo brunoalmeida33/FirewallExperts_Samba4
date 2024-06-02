@@ -1,0 +1,29 @@
+#Arquivo de Configuração para modo apenas de compartilhamento
+#Para modo AD-DC, o samba-tool irá criar um novo arquivo.
+
+[global]
+    workgroup = WG
+    netbios name = SIMPLE-SMB4
+    server string = Servidor de Arquivos
+    server role = standalone server
+    log file = /var/log/samba/samba.log
+    preferred master = Yes
+    dns proxy = No
+    wins support = Yes
+
+[public]
+    comment = PUBLIC Directory
+    path = /home/samba/public
+    read only = No
+    create mask = 0666
+    directory mask = 0777
+    guest ok = Yes
+
+[office]
+    comment = OFFICE Directory
+    path = /home/samba/office
+    valid users = @samba
+    force group = samba
+    read only = No
+    create mask = 0660
+    directory mask = 0770

@@ -36,6 +36,27 @@ Para verificar a atualização do Samba, basta conferir a versão dos binarios.
 ![image](https://github.com/brunoalmeida33/FirewallExperts_Samba4/assets/33161398/b98f68e3-c0af-412e-94b8-0d68b9f33c81)
 
 
+------------
+
+# Removendo o Samba 4
+
+1- Acesse seu firewall atraves do SSH (com putty ou qualquer outro terminal).
+
+![image](https://github.com/brunoalmeida33/FirewallExperts_Samba4/assets/33161398/9b291c7c-9c09-4599-a91a-94e315883b7d)
+
+2- Execute os seguintes passos:
+
+cd /usr/local/src/FirewallExperts_Samba4 (caso nao tenha deletado o addon)
+
+./installer uninstall
+
+![image](https://github.com/brunoalmeida33/FirewallExperts_Samba4/assets/33161398/2d427d23-68ad-4db5-9b64-649a00563fcb)
+
+
+Para verificar a remoção do Samba 4, basta conferir a versão dos binarios.
+
+![image](https://github.com/brunoalmeida33/FirewallExperts_Samba4/assets/33161398/19de2bc6-0f18-4188-ae2a-3ac311992603)
+
 
 ------------
 ### Termo de Uso para a Instalação do Addon Samba 4 no Endian Firewall Community 3.3.x

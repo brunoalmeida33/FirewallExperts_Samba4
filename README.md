@@ -2,9 +2,9 @@
 # Samba 4 for Endian Community 3.3.x
 
 
-** Sobre o Addon**
+### Sobre o Addon
 
-** Este addon serve para atualizações do Samba do Endian Firewall Community da versao 3.6.25 para a versao 4.4.16 para uso exclusivo de autenticação do firewall no AD.**
+### Este addon serve para atualizações do Samba do Endian Firewall Community da versao 3.6.25 para a versao 4.4.16 para uso exclusivo de autenticação do firewall no AD.
 
 #####  Obs: Não utilize este addon como um samba server ou active directory.
 

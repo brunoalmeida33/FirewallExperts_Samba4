@@ -105,7 +105,7 @@ Se você tiver dúvidas ou precisar de mais informações, entre em contato cono
 
 ------------
 
-## Pedido de Colaboração para Manutenção do Projeto FirewallExperts
+## Colaboração para Manutenção do Projeto FirewallExperts
 
 Caro Usuário.
 Nós, da equipe da FirewallExperts, estamos comprometidos em oferecer soluções que melhorem e ampliem as funcionalidades do seu sistema Endian Firewall Community, como este addon Samba 4 ou qualquer outro para o Endian Firewall Community 3.3.x. 

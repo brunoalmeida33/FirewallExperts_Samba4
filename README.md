@@ -29,13 +29,17 @@ cd FirewallExperts_Samba4
 
 ./installer install
 
+/etc/init.d/winbindd restart
+
+/etc/init.d/squid restart
+
 ![image](https://github.com/brunoalmeida33/FirewallExperts_Samba4/assets/33161398/8520ac92-729c-4758-9bd2-1ed4557537f4)
 
 Para verificar a atualização do Samba, basta conferir a versão dos binarios.
 
 ![image](https://github.com/brunoalmeida33/FirewallExperts_Samba4/assets/33161398/b98f68e3-c0af-412e-94b8-0d68b9f33c81)
 
-Obs: Apos instalar o addon, por favor reiniciar o serviço do Winbindd ( execute /etc/init.d/winbindd restart) ou reinsira o proxy no dominio em "Ingressar no AD".
+Obs: Apos instalar o addon, por favor reiniciar o serviço do Winbindd e Squid ou reinsira o proxy no dominio em "Ingressar no AD".
 
 
 ------------
